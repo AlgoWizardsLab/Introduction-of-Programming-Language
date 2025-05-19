@@ -1,4 +1,3 @@
 
 
-
-30 80 33 
+Yes this is a Square MatrixNo
