@@ -1,32 +1,27 @@
-#include<stdio.h>
-int main()
-{
-    int row, col;
-    scanf("%d %d", &row, &col);
-    
-    int arr[row][col];
+#include <stdio.h>
+#include <stdlib.h>
 
-    for (int i = 0; i < row; i++)
-    {
-        for (int j = 0; j < col; j++)
-        {
-            scanf("%d", &arr[i][j]);
-        }
-        
-    }
-    int primary_diagonal_sum = 0;
-    int secondary_diagonal_sum =0;
-    for (int i = 0; i < row; i++)
-    {
-        for (int j = 0; j < col; j++)
-        {
-            if(i==j){
-                primary_diagonal_sum += arr[i][j];
+int main() {
+    int N;
+    scanf("%d", &N);
+    
+    int matrix[N][N];
+    int primarySum = 0, secondarySum = 0;
+    
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            scanf("%d", &matrix[i][j]);
+            if (i == j) {
+                primarySum += matrix[i][j];
+            }
+            if (i + j == N - 1) {
+                secondarySum += matrix[i][j];
             }
         }
-        
     }
     
-
+    int difference = abs(primarySum - secondarySum);
+    printf("%d\n", difference);
+    
     return 0;
 }
