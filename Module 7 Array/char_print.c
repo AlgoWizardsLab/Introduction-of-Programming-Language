@@ -4,13 +4,13 @@ int main()
     int n;
     scanf("%d", &n);
 
-    // outer loop :
     for (int i = 0; i < n; i++)
     {
-        
-        for (int j = 0; j < n - i; j++)
+        char ch = 'A';
+        for (int j = 0; j < n; j++)
         {
-            printf("* ");
+            printf("%c ", ch);
+            ch = ch + 1;
         }
         printf("\n");
     }
